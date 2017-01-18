@@ -1,0 +1,6 @@
+ddt>=0.1.0 #MIT
+mock>=0.1.0
+pytest>=2.8.0
+pytest-cov>=2.1.0
+pytest-xdist>=1.13.1
+PyHamcrest>=1.8.5

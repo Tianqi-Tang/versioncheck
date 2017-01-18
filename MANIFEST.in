@@ -1,0 +1,4 @@
+include *.md
+include *.cfg
+include *.rst
+include *.txt
