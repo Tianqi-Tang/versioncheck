@@ -1,5 +1,4 @@
 # coding=utf-8
-# Copyright (c) 2016 EMC Corporation.
 # All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -129,10 +128,10 @@ class VersionedFunc(object):
 
 
 class Check(object):
-    """Version requirement decorator
+    """Version check decorator
 
     This is a version validation decorator and can apply to either a
-    Class, funciont or a method. When apply it to a method/function,
+    Class, function or a method. When apply it to a method/function,
     it supports function overload based on versions.
 
     :param criteria_string: The version criteria expression. The supported
@@ -143,7 +142,7 @@ class Check(object):
            - INIT_METHOD    init method of a decorated class
            - CLASS_METHOD   classmethod of a decorated class
            - STATIC_METHOD  staticmethod of a decorated class
-           - METHOD  method decorated by Require
+           - METHOD  method/function that is decorated by the decorator
 
         *args and **kwargs: The invoke parameters of the decorated method
 
@@ -195,6 +194,7 @@ class Check(object):
     >>>          self._version = version
     """
 
+    # INSTANCE_METHOD is not used so far
     INIT_METHOD, CLASS_METHOD, INSTANCE_METHOD, STATIC_METHOD, METHOD = range(5)
 
     def __init__(self, criteria_string, version_getter):
