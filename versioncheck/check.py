@@ -195,7 +195,8 @@ class Check(object):
     """
 
     # INSTANCE_METHOD is not used so far
-    INIT_METHOD, CLASS_METHOD, INSTANCE_METHOD, STATIC_METHOD, METHOD = range(5)
+    INIT_METHOD, CLASS_METHOD, INSTANCE_METHOD, STATIC_METHOD, METHOD = \
+        range(5)
 
     def __init__(self, criteria_string, version_getter):
         self.criteria = Criteria.parse(criteria_string)

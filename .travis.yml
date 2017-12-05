@@ -5,12 +5,12 @@ python:
     - "3.5"
     - "3.6"
 install:
-    - pip install coveralls
+    - pip install coveralls flake8
     - pip install -r requirements.txt
     - pip install -r test-requirements.txt
 script:
-    - flake8 storops storops_test storops_comptest
-    - "py.test -n2 --cov=storops --cov-config coverage.ini  --cov-report=xml --cov-report term --junit-xml=junit-result.xml test"
+    - flake8 versioncheck test
+    - "py.test -n2 --cov=versioncheck --cov-config coverage.ini  --cov-report=xml --cov-report term --junit-xml=junit-result.xml test.py"
 after_success:
     - coveralls
 notifications:
